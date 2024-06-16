@@ -93,8 +93,8 @@ lo, hi, df = note_min, 127, 108 # 108 = C8 = highest note in an 88-key piano
 note_max = get_input(f"note_max ? ({lo} - {hi}, default {df}): ", lo, hi, df)
 print()
 lo, hi = 1, note_max - note_min
-df = math.ceil(hi * 2 / 5) # 2 samples every 5 notes (every sample gets transposed -1 and +1)
-note_layers = get_input(f"note_layers ? ({1} - {hi}, default {df}): ", 1, hi, df)
+df = hi // 3 # 1 sample every 3 notes (every sample gets transposed -1 and +1)
+note_layers = get_input(f"note_layers ? ({lo} - {hi}, default {df}): ", lo, hi, df)
 print()
 lo, hi, df = 1, 127, 5
 velocity_layers = get_input(f"velocity_layers ? ({lo} - {hi}, default {df}): ", lo, hi, df)
